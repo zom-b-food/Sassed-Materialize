@@ -4,10 +4,7 @@
 <meta name="description" content="materialize is a material design based mutipurpose responsive template">
 <meta name="keywords" content="material design, card style, material template, portfolio, corporate, business, creative, agency">
 <meta name="author" content="Adam L Marsh - www.myuikit.com, www.adam-marsh.com, www.ui-design-engineering.com">
-
-<!--  favicon -->
 <link rel="shortcut icon" href="../assets-mat/img/ico/favicon.png">
-<!--  apple-touch-icon -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets-mat/img/ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets-mat/img/ico/apple-touch-icon-114-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets-mat/img/ico/apple-touch-icon-72-precomposed.png">
