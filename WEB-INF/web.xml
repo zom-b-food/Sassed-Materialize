@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+<display-name>
+    MATRLIZE-STARTER (php)
+  </display-name>
+  <distributable/>
+
+  <!--
+       If context-root is set here, then ServletContextWebAppRegistry will use
+       this setting as the context-root for this WebApp. This must match
+       the context-root setting in application.xml.
+    -->
+  <context-param>
+    <param-name>context-root</param-name>
+    <param-value>MATRLIZE-STARTER</param-value>
+  </context-param>
+
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>resource</param-value>
+	</context-param>
+
+  <servlet>
+    <servlet-name>Quercus Servlet</servlet-name>
+    <servlet-class>com.caucho.quercus.servlet.QuercusServlet</servlet-class>
+
+    <!--
+      Specifies the encoding Quercus should use to read in PHP scripts.
+    -->
+    <!--
+    <init-param>
+      <param-name>script-encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    -->
+
+    <!--
+      Tells Quercus to use the following JDBC database and to ignore the
+      arguments of mysql_connect().
+    -->
+    <!--
+    <init-param>
+      <param-name>database</param-name>
+      <param-value>jdbc/test</param-value>
+    </init-param>
+    -->
+
+    <!--
+    <init-param>
+      <param-name>ini-file</param-name>
+      <param-value>WEB-INF/php.ini</param-value>
+    </init-param>
+    -->
+
+    <!--
+      Location of the license to enable php to java compilation.
+    -->
+    <init-param>
+      <param-name>license-directory</param-name>
+      <param-value>WEB-INF/licenses</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Quercus Servlet</servlet-name>
+    <url-pattern>*.php</url-pattern>
+  </servlet-mapping>
+<servlet>
+        <servlet-name>authEmail</servlet-name>
+        <servlet-class>authenticate.authEmail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>authEmail</servlet-name>
+        <url-pattern>/authenticate.authEmail</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>demoEmail</servlet-name>
+        <servlet-class>authenticate.demoEmail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demoEmail</servlet-name>
+        <url-pattern>/authenticate.demoEmail</url-pattern>
+    </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.php</welcome-file>
+  </welcome-file-list>
+
+
+
+	<mime-mapping>
+		<extension>png</extension>
+		<mime-type>image/png</mime-type>
+	</mime-mapping>
+
+	<mime-mapping>
+		<extension>js</extension>
+		<mime-type>text/javascript</mime-type>
+	</mime-mapping>
+
+</web-app>

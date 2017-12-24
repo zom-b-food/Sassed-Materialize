@@ -1,0 +1,58 @@
+<project name="MAT-STARTER" default="all" basedir=".">
+    <property name="app.name" value="MAT-STARTER"/>
+    <property name="tcserver.home" value="/Tomcat-7/lib"/>
+    <property name="work.home" value="${basedir}/WEB-INF"/>
+    <property name="dist.home" value="${basedir}/war"/>
+    <property name="src.home" value="${basedir}/WEB-INF"/>
+
+
+    <!-- Define the CLASSPATH -->
+    <path id="compile.classpath">
+        <fileset dir="${tcserver.home}">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement location="${tcserver.home}"/>
+        <fileset dir="${tcserver.home}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="-load.properties"
+            description="Set properties for this build">
+        <!--Build version information -->
+        <property name="min.major" value="1"/>
+        <property name="min.minor" value="1"/>
+    </target>
+
+    <!--Create build timestamp-->
+    <target name="stamp" depends="-load.properties"
+            description="Create build directory structure">
+        <tstamp>
+            <format property="TODAY" pattern="EEE, d MMM yyyy HH:mm:ss Z"/>
+        </tstamp>
+        <echo file="${work.home}/java.tstamp.txt" append="false">Build Date: ${TODAY}</echo>
+    </target>
+
+    <target name="clean"
+            description="Delete old java and war directories">
+        <delete dir="${work.home}/classes"/>
+        <delete file="${work.home}/java.tstamp.txt"/>
+    </target>
+
+    <target name="compile-java" depends="clean, stamp"
+            description="Compile Java sources and copy to WEB-INF/classes dir">
+        <mkdir dir="${work.home}/classes"/>
+        <javac srcdir="${src.home}/src" includeantruntime="false"
+               destdir="${work.home}/classes">
+            <classpath refid="compile.classpath"/>
+        </javac>
+        <copy todir="${work.home}/classes">
+            <fileset dir="${src.home}/src" excludes="**/*.java"/>
+        </copy>
+        <jar jarfile="${dist.home}/${app.name}.war"
+             basedir="${work.home}"/>
+    </target>
+
+    <target name="all" depends="clean,compile-java,stamp"
+            description="Clean work dirs, then compile and create a WAR"/>
+</project>

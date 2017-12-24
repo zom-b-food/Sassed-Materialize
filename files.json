@@ -1,0 +1,27 @@
+{
+    "files": [
+        {
+            "source": "./assets-mat/js/jquery-2.1.3.min.js",
+            "type": "SCRIPT",
+            "size": 12.096,
+            "stopExecution": false
+        },
+        {
+            "source": "./assets-mat/compiled/MAT-STARTER.min.js",
+            "type": "SCRIPT",
+            "size": 10.096,
+            "stopExecution": false
+        },
+        {
+            "source": "./assets-mat/compiled/MAT-STARTER.min.css",
+            "type": "CSS",
+            "size": 20.819
+        },
+        {
+            "source": "./sitewide-mat/a-header.php",
+            "type": "PHP",
+            "size": 20.819
+        }
+    ]
+
+}

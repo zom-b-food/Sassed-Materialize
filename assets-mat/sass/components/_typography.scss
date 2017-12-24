@@ -1,0 +1,154 @@
+@font-face {
+  font-family: 'gudea';
+  src: url('../fonts/gudea-regular-webfont.eot');
+  src: url('../fonts/gudea-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/gudea-regular-webfont.woff') format('woff'), url('../fonts/gudea-regular-webfont.ttf') format('truetype'), url('../fonts/gudea-regular-webfont.svg#gudea-regular') format('svg');
+
+}
+
+@font-face {
+  font-family: 'asap';
+  src: url('../fonts/asap-regular-webfont.eot');
+  src: url('../fonts/asap-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/asap-regular-webfont.woff') format('woff'), url('../fonts/asap-regular-webfont.ttf') format('truetype'), url('../fonts/asap-regular-webfont.svg#asap-regular') format('svg');
+
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot");
+  src: url("../fonts/fontawesome-webfont.eot") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LigatureSymbols';
+  src: url('../fonts/LigatureSymbols-2.11.eot');
+  src: url('../fonts/LigatureSymbols-2.11.eot?#iefix') format('embedded-opentype'), url('../fonts/LigatureSymbols-2.11.woff') format('woff'), url('../fonts/LigatureSymbols-2.11.ttf') format('truetype'), url('../fonts/LigatureSymbols-2.11.svg#LigatureSymbols') format('svg');
+  src: url('../fonts/LigatureSymbols-2.11.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  line-height: 1.5;
+  > a, p, div, td, pre {
+    font-size: $body-base-fontsize;
+    line-height: 1.5;
+  }
+  @media only screen and (min-width: 0) {
+    font-size: $body-base-fontsize;
+  }
+
+  @media only screen and (min-width: $medium-screen) {
+    font-size: $body-base-fontsize;
+  }
+
+  @media only screen and (min-width: $large-screen) {
+    font-size: $body-base-fontsize;
+  }
+
+  font-family: 'asap', sans-serif;
+  font-weight: normal;
+  color: $off-black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  line-height: 1.1;
+  color: #202020;
+  margin: 0 0 15px;
+  font-family: 'gudea', serif;
+}
+
+// Header Styles
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-weight: inherit;
+}
+
+h1 {
+  font-size: $h1-fontsize;
+  line-height: 110%;
+  margin: ($h1-fontsize / 2) 0 ($h1-fontsize / 2.5) 0;
+}
+
+h2 {
+  font-size: $h2-fontsize;
+  line-height: 110%;
+  margin: ($h2-fontsize / 2) 0 ($h2-fontsize / 2.5) 0;
+}
+
+h3 {
+  font-size: $h3-fontsize;
+  line-height: 110%;
+  margin: ($h3-fontsize / 2) 0 ($h3-fontsize / 2.5) 0;
+}
+
+h4 {
+  font-size: $h4-fontsize;
+  line-height: 110%;
+  margin: ($h4-fontsize / 2) 0 ($h4-fontsize / 2.5) 0;
+}
+
+h5 {
+  font-size: $h5-fontsize;
+  line-height: 110%;
+  margin: ($h5-fontsize / 2) 0 ($h5-fontsize / 2.5) 0;
+}
+
+h6 {
+  font-size: $h6-fontsize;
+  line-height: 110%;
+  margin: ($h6-fontsize / 2) 0 ($h6-fontsize / 2.5) 0;
+}
+
+// Text Styles
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 500;
+}
+
+small {
+  font-size: 75%;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.thin {
+  font-weight: 200;
+}
+
+.flow-text {
+  font-weight: 300;
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+      font-size: 1.2rem * (1 + (.02 * $i));
+    }
+    $i: $i + 1;
+  }
+
+  // Handle below 360px screen
+  @media only screen and (max-width: 360px) {
+    font-size: 1.2rem;
+  }
+}
+
+a, p, div, td, pre {
+  font-size: $body-base-fontsize;
+}
+
+i.fa {
+  padding:0 !important;
+  margin:0 auto !important;
+  height:auto !important;
+
+}
